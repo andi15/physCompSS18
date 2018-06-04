@@ -1,0 +1,35 @@
+Physical Computing
+SS2018
+
+Blatt 7
+
+Autoren: Stan, Zdeneck, Leuschner, Hader
+
+
+Aufgabe 1: Mit welcher Abtastrate muss der Lichtsensor mindestens ausgelesen werden, um das Flackern detektieren
+zu können? Begründen Sie Ihre Antwort!
+
+Antwort:
+Die Abtastrate muss laut dem Niquist-Shanon-Theorem immer mindestens doppelt so hoch, wie die höchste aufzulösende Frequenz sein, damit keine Phantomtöne auftreten.
+fn = f (n / (2*FG))  ->  fn = 1 / (2 * 100 Hz) -> fAbtast = 200 Hz
+
+Aufgabe 2: Welche Einstellungen am A/D-Wandler beeinflussen gemäß Datenblatt die maximal erreichbare Abtastrate? Bestimmen Sie eine mögliche Einstellung!
+- Seite 96: "The ADC has up to ±2 LSB inaccuracy"
+
+- "The ADC has 12-bit resolution and is capable of converting up to 2
+million samples per second"
+
+Aufgabe 3: Implementieren Sie die Abfrage des Lichtsensors analog zu Übungsaufgabe 10!
+
+- Anschluss des Lichtsensors über Port B0 
+	-> Dann in ADC rein und auswerten
+
+Aufgabe 4: Wie könnte das Flackern detektiert werden, ohne dass langsame Helligkeitsänderungen als Flackern klassifiziert werden? Entwickeln Sie einen einfachen Ansatz!1
+
+Hinweise: 
+- Beachten Sie die maximale Übertragungsrate der seriellen Schnittstelle bei der Übe¬¬¬¬¬¬rtragung
+von Messdaten an den PC.
+- Es kann sich anbieten, zunächst einen Datensatz in den Speicher des
+Boards aufzuzeichnen und diesen anschließend an den PC zu übertragen.
+- Anhand aufgezeichneter
+Datensätze lässt sich der Filter am PC leicht testen.
